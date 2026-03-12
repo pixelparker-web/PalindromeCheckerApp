@@ -1,0 +1,23 @@
+public class UseCase10PalindromeCheckerApp
+{
+    public static void main(String[] args)
+    {
+        String str = "Madam";
+        String normalized = str.replaceAll("\\s+", "").toLowerCase();
+        String reverse = "";
+
+        for(int i = normalized.length() - 1; i >= 0; i--)
+        {
+            reverse = reverse + normalized.charAt(i);
+        }
+
+        if(normalized.equals(reverse))
+        {
+            System.out.println(str + " is a Palindrome");
+        }
+        else
+        {
+            System.out.println(str + " is not a Palindrome");
+        }
+    }
+}

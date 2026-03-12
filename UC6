@@ -1,0 +1,37 @@
+import java.util.*;
+
+public class UseCase6PalindromeCheckerApp
+{
+    public static void main(String[] args)
+    {
+        String str = "madam";
+        Queue<Character> queue = new LinkedList<>();
+        Stack<Character> stack = new Stack<>();
+        boolean palindrome = true;
+
+        for(int i = 0; i < str.length(); i++)
+        {
+            char ch = str.charAt(i);
+            queue.add(ch);
+            stack.push(ch);
+        }
+
+        for(int i = 0; i < str.length(); i++)
+        {
+            if(queue.remove() != stack.pop())
+            {
+                palindrome = false;
+                break;
+            }
+        }
+
+        if(palindrome)
+        {
+            System.out.println(str + " is a Palindrome");
+        }
+        else
+        {
+            System.out.println(str + " is not a Palindrome");
+        }
+    }
+}

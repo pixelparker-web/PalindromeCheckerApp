@@ -1,0 +1,34 @@
+import java.util.*;
+
+public class UseCase7PalindromeCheckerApp
+{
+    public static void main(String[] args)
+    {
+        String str = "madam";
+        Deque<Character> deque = new LinkedList<>();
+        boolean palindrome = true;
+
+        for(int i = 0; i < str.length(); i++)
+        {
+            deque.addLast(str.charAt(i));
+        }
+
+        while(deque.size() > 1)
+        {
+            if(deque.removeFirst() != deque.removeLast())
+            {
+                palindrome = false;
+                break;
+            }
+        }
+
+        if(palindrome)
+        {
+            System.out.println(str + " is a Palindrome");
+        }
+        else
+        {
+            System.out.println(str + " is not a Palindrome");
+        }
+    }
+}
